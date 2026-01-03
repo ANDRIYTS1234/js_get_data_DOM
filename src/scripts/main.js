@@ -8,7 +8,9 @@ const result = [];
 numbers.forEach((item) => {
   const num = item.textContent.split(',').join('');
 
-  result.push(Number(num));
+  if (!isNaN(num)) {
+    result.push(Number(num));
+  }
 });
 
 const totalSum = result.reduce((prev, cur) => prev + cur, 0);
